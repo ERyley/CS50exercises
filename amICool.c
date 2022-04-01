@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 
+/*helper function to avoid confusion with how strcmp works */
+
+int areStringsEqual(char stringA[], char stringB[])
+{
+    return !strcmp(stringA, stringB);
+}
 
 int main()
 {
@@ -10,7 +16,7 @@ int main()
     scanf ("%s", &answer);
     while (1 == 1)
     {
-        if(!strcmp(answer,"yes") || !strcmp(answer,"y") || !strcmp(answer,"Yes") || !strcmp(answer,"Y"))
+        if(areStringsEqual(answer,"yes") || areStringsEqual(answer,"y") || areStringsEqual(answer,"Yes") || areStringsEqual(answer,"Y"))
         {
             printf ("So are you!");
             break;
